@@ -14,17 +14,7 @@ GO
 DECLARE @personal TABLE (
 	id_trabajador int PRIMARY KEY, id_empleado int, nombre nvarchar(150), cargo nvarchar(100), codigo nvarchar(20)
 );
-INSERT INTO @personal VALUES
-	(1, 2, N'Adonis Vasquez', N'Arquitecto', N'EM0038'),
-	(2, 3, N'Benjamin Alfonso', N'Ingeniero de Sistemas', N'EM0014'),
-	(3, 4, N'Celeste Lechuga', N'Arquitecta', N'EM0030'),
-	(5, 6, N'Marco Coila', N'Arquitecto', N'EM0009'),
-	(6, 7, N'Kevin Vega', N'Abogado', N'EM0003'),
-	(7, 8, N'Fiorella Alarcon', N'Abogada', N'EM0011'),
-	(8, 9, N'Alejandro Guzman', N'Arquitecto', N'EM0029'),
-	(9, 10, N'Israel Rodrigo Ochoa Mejia', N'Ingeniero', N'EM0099'),
-	(10, 11, N'Edu Cruz', N'Ingeniero Clivil', N'EM0005'),
-	(11, 12, N'Matias Sebastian Moreno Rodriguez', N'Sistemas', N'EM0015');
+
 
 DECLARE @tabla_identidad sysname;
 DECLARE @asistencias_antes int = (SELECT COUNT(*) FROM dbo.Asistencia);
