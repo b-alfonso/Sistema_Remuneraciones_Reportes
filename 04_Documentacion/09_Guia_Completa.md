@@ -1,6 +1,6 @@
 # Guía completa: instalar, cargar los datos y crear los dashboards
 
-Esta es la guía principal y unificada del proyecto. Reúne la instalación, la simulación en otra computadora, la construcción de los reportes y la demostración. Sustituye el contenido anterior de `09_Guia_Completa.md` y `14_Simulacion_Otra_Computadora.md`.
+Esta es la guía principal y unificada del proyecto. Reúne la instalación, la simulación en otra computadora, la construcción de los reportes y la demostración. 
 
 El objetivo es llegar desde una computadora sin el proyecto instalado hasta un reporte que muestre los resultados del trimestre **julio–septiembre de 2026**. No es necesario saber Git ni escribir comandos de GitHub. Los pasos de instalación están orientados a Windows, que es el entorno de las capturas del equipo.
 
