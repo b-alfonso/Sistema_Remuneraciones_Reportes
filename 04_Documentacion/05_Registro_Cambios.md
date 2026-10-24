@@ -97,3 +97,10 @@ Después de cada aporte real, agregar una entrada con integrante, archivos, camb
 - Se documentó el ensayo de hasta diez minutos de demostración, separado de los cinco minutos del PPT y de la instalación previa de programas.
 - El archivo 14 conserva un enlace al 09. Se actualizaron los resúmenes para señalar una única guía principal.
 - Verificación documental: enlaces locales, anclas, orden de los seis SQL, fórmulas y cantidades frente al código y evidencias existentes. No se modificaron SQL, DAX, PBIX, imágenes ni informes Word/PDF; no se presenta una nueva ejecución de SQL Server o Power BI como parte de esta revisión.
+
+## Ubicación y recorrido de la guía de replicación
+
+- La guía completa se trasladó a `05_Procedimientos_Replicacion/09_Guia_Completa.md`.
+- El recorrido comienza en la creación de las bases y continúa con numeración desde el apartado 1.
+- Se conservaron tablas, enlaces, instrucciones de clic derecho y resultados de comprobación; se retiraron los apartados de preparación y diagnóstico.
+- Se actualizaron los enlaces desde la documentación.
