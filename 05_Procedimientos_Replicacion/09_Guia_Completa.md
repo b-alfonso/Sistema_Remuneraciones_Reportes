@@ -242,11 +242,21 @@ Si solo necesitas abrir el archivo terminado, puedes pasar al apartado 9. Para m
 <a id="reporte-nuevo"></a>
 ## 5. Construir el reporte desde una página vacía
 
-Este recorrido explica la construcción completa. Es más largo que la demostración de diez minutos. No intentes configurar desde cero todas las medidas y relaciones durante ese tiempo si no lo has ensayado.
+Este recorrido empieza en la primera apertura de Power BI Desktop y termina con las dos páginas del reporte. Después de completar la carga SQL de los apartados 1 y 2, sigue los apartados **5, 6, 7, 8 y 9**, en ese orden. No necesitas abrir un PBIX existente. La construcción completa se prepara antes de la demostración de diez minutos.
 
 ### 5.1 Conectar un archivo nuevo
 
-1. En Power BI Desktop, abre un reporte nuevo con **Archivo → Nuevo**.
+Abre **Power BI Desktop** desde el menú Inicio de Windows. En la pantalla inicial elige **Informe en blanco**; también puedes entrar por **Archivo → Nuevo**. Trabajarás en Desktop con SQL Server local, sin publicar en Power BI Service.
+
+En SSMS, pulsa **Nueva consulta** y ejecuta lo siguiente para obtener el servidor que utilizarás en Power BI:
+
+```sql
+SELECT CONVERT(nvarchar(128), SERVERPROPERTY('ServerName')) AS servidor;
+```
+
+Copia el resultado de la columna `servidor` y regresa a Power BI.
+
+1. Mantén abierto el informe en blanco.
 2. En Inicio, pulsa **Obtener datos → SQL Server**. Si no aparece, usa **Más** y busca SQL Server.
 3. En **Servidor**, escribe la instancia utilizada en SSMS.
 4. En **Base de datos**, escribe `A&SG_DataMart`.
