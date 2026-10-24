@@ -9,7 +9,7 @@ La entrega usa [Reporte_Rendimiento_Personal.pbix](../03_Vistas_PowerBI/Reporte_
 1. Crear las bases y ejecutar el ETL según [00_Orden_Ejecucion.md](00_Orden_Ejecucion.md).
 2. Abrir el `.pbix` en Power BI Desktop.
 3. En **Archivo → Opciones y configuración → Configuración de origen de datos**, cambiar el servidor si es diferente. La base es `A&SG_DataMart`.
-4. Configurar las credenciales de esa instancia y actualizar los visuales. SQL Server debe estar disponible.
+4. Configurar las credenciales de esa instancia y pulsar **Actualizar**. SQL Server debe estar disponible al importar o actualizar datos. Abrir un PBIX conserva su modo de almacenamiento; para revisar o convertir la copia a Importar, seguir el apartado 4.3 de la guía completa.
 
 El nombre del servidor puede consultarse en SSMS:
 
@@ -20,8 +20,8 @@ SELECT SERVERPROPERTY('ServerName') AS servidor;
 ## Construir un informe nuevo
 
 1. **Obtener datos → SQL Server**. Escribir servidor y base `A&SG_DataMart`.
-2. Elegir **DirectQuery**, conectarse y cargar las cinco vistas de la tabla siguiente.
-3. Crear cuatro relaciones activas, de uno a varios, con filtro único desde cada dimensión hacia los hechos.
+2. En Servidor escribir `.` para la instancia local predeterminada, elegir **Importar**, conectarse y cargar las cinco vistas de la tabla siguiente. Para una instancia con nombre, utilizar su nombre real, por ejemplo `.\SQLEXPRESS`.
+3. Activar la detección automática de relaciones en **Opciones → Archivo actual → Carga de datos** y utilizar **Administrar relaciones → Detección automática**. Verificar las cuatro relaciones de la tabla, activas, de uno a varios y con filtro único desde cada dimensión hacia los hechos. Las vistas no garantizan su detección: completar las relaciones no detectadas con **Nueva** usando los mismos identificadores.
 
 | Dimensión | Columna en ambos lados | Tabla de hechos |
 | --- | --- | --- |
@@ -63,3 +63,5 @@ La base de S/ 1.500 y el máximo de 20% son supuestos académicos. Los pasos y r
 Sin filtros, deben verse 582 asistencias y 582 tareas. Para el trimestre, Benjamin tiene IEP 96 e Israel 22. Comparar los resultados por mes con `dbo.vw_indicadores_mensuales` en SSMS; esa vista usa tasas de 0 a 100 y DAX usa valores de 0 a 1 con formato porcentual.
 
 Guardar en `03_Vistas_PowerBI/Reporte_Rendimiento_Personal.pbix`. Al modificarlo, subir la versión actualizada con el mismo nombre. Exportar un PDF es opcional; no hace falta publicar en Power BI Service para demostrarlo desde Desktop.
+
+En modo Importar, los datos se guardan en el PBIX. Después de cada ejecución del ETL, pulsar **Inicio → Actualizar** en Power BI para incorporar los cambios.
