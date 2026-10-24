@@ -1,5 +1,7 @@
 # Informe de Power BI
 
+Para instrucciones paso a paso sin conocimientos previos, usar [09_Guia_Completa.md](09_Guia_Completa.md#reporte-existente). Este archivo conserva el resumen técnico de conexión y visuales.
+
 La entrega usa [Reporte_Rendimiento_Personal.pbix](../03_Vistas_PowerBI/Reporte_Rendimiento_Personal.pbix), con dos páginas: rendimiento y bono. Para abrir ese archivo no es necesario crear otra vez sus medidas.
 
 ## Abrir en otra computadora
