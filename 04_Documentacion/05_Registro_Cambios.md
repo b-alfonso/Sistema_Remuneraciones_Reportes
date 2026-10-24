@@ -87,3 +87,13 @@ Después de cada aporte real, agregar una entrada con integrante, archivos, camb
 - Se corrigió el enlace del modelo estrella para usar la captura existente, porque el SVG enlazado ya no estaba en la versión actual.
 - Se reconocieron las capturas de rendimiento y bono ya publicadas en `03_Vistas_PowerBI`. No se modificaron sus imágenes ni los archivos PBIX.
 - Esta revisión ejecutó SQL Server y revisó la estructura de los PBIX; no abrió Power BI Desktop ni probó su conexión en vivo.
+
+## Etapa 9 — Guía unificada para la replicación y demostración
+
+- Se reunieron los contenidos de `09_Guia_Completa.md` y `14_Simulacion_Otra_Computadora.md` en el archivo 09, ampliados con instrucciones para personas sin experiencia en GitHub, SQL Server o Power BI.
+- Se detallaron instalación, descarga sin Git, conexión, ejecución de archivos completos, creación y carga, comprobaciones y diagnóstico de errores.
+- Se incluyeron dos recorridos de Power BI: abrir el PBIX terminado y construir desde cero con relaciones, medidas DAX, formato, tarjetas, segmentadores, barras y tablas del bono.
+- Las trece definiciones DAX del recorrido se copiaron de sus archivos canónicos. Se añadieron ejemplos de resultados, guardado, evidencias y creación de un pull request desde el navegador.
+- Se documentó el ensayo de hasta diez minutos de demostración, separado de los cinco minutos del PPT y de la instalación previa de programas.
+- El archivo 14 conserva un enlace al 09. Se actualizaron los resúmenes para señalar una única guía principal.
+- Verificación documental: enlaces locales, anclas, orden de los seis SQL, fórmulas y cantidades frente al código y evidencias existentes. No se modificaron SQL, DAX, PBIX, imágenes ni informes Word/PDF; no se presenta una nueva ejecución de SQL Server o Power BI como parte de esta revisión.

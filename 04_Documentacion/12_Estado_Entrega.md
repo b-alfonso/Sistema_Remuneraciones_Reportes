@@ -40,4 +40,4 @@ El PPT queda a cargo del equipo. El guion detallado se prepara el viernes: cinco
 
 Se añadieron `01_Base_Datos/04_Cargar_Simulacion.sql` y `05_Comprobar_Simulacion.sql`. La instalación, carga y repetición se comprobaron de nuevo en SQL Server 2022 Developer aislado; los resultados están en [Resultados_Carga_Simulacion.txt](Evidencias/Resultados_Carga_Simulacion.txt).
 
-La guía actual está en [14_Simulacion_Otra_Computadora.md](14_Simulacion_Otra_Computadora.md). La revisión de PBIX y capturas no sustituye abrir Power BI Desktop y comprobar la conexión del equipo de clase.
+La guía principal unificada está en [09_Guia_Completa.md](09_Guia_Completa.md). El archivo 14 conserva un enlace de compatibilidad hacia ella. La revisión de PBIX y capturas no sustituye abrir Power BI Desktop y comprobar la conexión del equipo de clase.

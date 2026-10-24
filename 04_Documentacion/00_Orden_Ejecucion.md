@@ -42,4 +42,4 @@ Si aparece `Con rechazos`, revisar `rechazos_etl` antes de comparar con estas ca
 
 [03_Alinear_Personal_Origen.sql](../01_Base_Datos/03_Alinear_Personal_Origen.sql) solo se utiliza para corregir el padrón de una instalación anterior. No hace falta en una instalación nueva con el generador vigente. Seguir [08_Padron_Trabajadores.md](08_Padron_Trabajadores.md) si los nombres todavía no coinciden.
 
-Para abrir Power BI y resolver una tabla vacía, seguir [14_Simulacion_Otra_Computadora.md](14_Simulacion_Otra_Computadora.md). La guía general está en [09_Guia_Completa.md](09_Guia_Completa.md).
+Para abrir Power BI y resolver una tabla vacía, seguir la [guía unificada](09_Guia_Completa.md). El antiguo archivo 14 conserva un enlace hacia esa misma guía.
