@@ -2,17 +2,24 @@
 
 Esta guía comienza con la ejecución de los archivos SQL y continúa hasta guardar los reportes y presentar la simulación de julio–septiembre de 2026.
 
-**Punto de partida:** repositorio descargado y extraído, SQL Server iniciado, SSMS conectado a la instancia de trabajo y Power BI Desktop instalado. Para la primera instalación, utiliza una instancia donde todavía no existan las bases `A&SG_OLTP` y `A&SG_DataMart`. La creación del Data Mart se ejecuta una vez; las siguientes demostraciones repiten la carga y su comprobación.
+**Punto de partida:** repositorio descargado y extraído, SQL Server iniciado, SSMS conectado a la instancia de trabajo y Power BI Desktop instalado. En Power BI se utiliza **Importar** y el servidor **`.`** para la instancia local predeterminada. Para la primera instalación, utiliza una instancia donde todavía no existan las bases `A&SG_OLTP` y `A&SG_DataMart`. La creación del Data Mart se ejecuta una vez; las siguientes demostraciones repiten la carga y su comprobación.
 
 Los nombres de archivo son enlaces: haz clic para abrirlos en GitHub o clic derecho → **Abrir enlace en una pestaña nueva** para conservar esta guía visible. Descarga cada SQL con **Download raw file**, ábrelo en SSMS con **Archivo → Abrir → Archivo** y ejecuta el archivo completo con **F5**, sin seleccionar una parte del código. Utiliza la misma instancia en SSMS y Power BI.
+
+Hay dos recorridos para los dashboards:
+
+| Opción | Qué vas a hacer | Apartados |
+| --- | --- | --- |
+| A: utilizar el reporte terminado | Descargar el PBIX de GitHub, abrirlo, conectar tu servidor y actualizar su copia de datos. | 4 y 9. |
+| B: construir desde cero | Abrir un informe en blanco, importar las vistas, detectar y verificar relaciones, crear medidas, tarjetas, filtros, barras y las dos tablas del bono. | 5, 6, 7, 8 y 9, en orden. |
 
 ## Índice
 
 1. [Crear las bases, instalar el ETL y cargar los datos](#instalacion)
 2. [Comprobar cantidades e indicadores](#comprobacion)
 3. [Dibujar el modelo estrella en SSMS](#estrella)
-4. [Abrir el reporte terminado en Power BI](#reporte-existente)
-5. [Construir el reporte desde una página vacía](#reporte-nuevo)
+4. [Opción A: descargar y abrir el dashboard terminado](#reporte-existente)
+5. [Opción B: crear los dashboards desde cero](#reporte-nuevo)
 6. [Crear las medidas y darles formato](#medidas)
 7. [Crear tarjetas, filtros y barras](#rendimiento)
 8. [Crear la página del bono referencial](#bono)
@@ -200,15 +207,17 @@ Las relaciones físicas ya fueron creadas por el archivo 02. El diagrama sirve p
 9. Ajusta el tamaño y toma una captura legible. No dibujes relaciones nuevas por nombre.
 
 <a id="reporte-existente"></a>
-## 4. Abrir el reporte terminado en Power BI
+## 4. Opción A: descargar y abrir el dashboard terminado
 
 Este recorrido es el más corto para comprobar la entrega y preparar la demostración. El archivo ya tiene las medidas y visuales; no necesitas crearlos otra vez.
 
-### 4.1 Abrir y guardar una copia de trabajo
+### 4.1 Descargar, abrir y guardar una copia de trabajo
 
-1. Abre Power BI Desktop.
-2. Selecciona **Archivo → Abrir** y busca [Reporte_Rendimiento_Personal.pbix](../03_Vistas_PowerBI/Reporte_Rendimiento_Personal.pbix) en la carpeta descargada.
-3. Guarda una copia con **Archivo → Guardar como**, por ejemplo `Simulacion_Rendimiento_Personal.pbix`, en tu carpeta de trabajo. No sobrescribas la única copia terminada antes de ensayar.
+1. Abre [Reporte_Rendimiento_Personal.pbix en GitHub](../03_Vistas_PowerBI/Reporte_Rendimiento_Personal.pbix). Puedes usar clic derecho → **Abrir enlace en una pestaña nueva** para mantener esta guía visible.
+2. Pulsa **Download raw file / Descargar archivo sin procesar** y guarda el archivo con extensión `.pbix` en tu computadora.
+3. Abre **Power BI Desktop** desde el menú Inicio de Windows.
+4. Selecciona **Archivo → Abrir → Examinar** y abre el PBIX descargado. Abrir el PBIX recupera las páginas, medidas, modelo y visuales guardados; no es la opción Obtener datos.
+5. Guarda una copia con **Archivo → Guardar como**, por ejemplo `Simulacion_Rendimiento_Personal.pbix`, en tu carpeta de trabajo.
 
 También existe `Bono_por_efectividad.pbix`. En la versión revisada contiene el mismo reporte de dos páginas; utiliza el nombre principal anterior para evitar confusiones.
 
@@ -218,15 +227,29 @@ También existe `Bono_por_efectividad.pbix`. En la versión revisada contiene el
 2. En Power BI, abre **Archivo → Opciones y configuración → Configuración de origen de datos**. Según la versión también puede aparecer desde el menú de **Transformar datos**.
 3. Selecciona la conexión de SQL Server utilizada por el archivo actual.
 4. Pulsa **Cambiar origen** cuando esté disponible.
-5. Sustituye el servidor guardado por el de tu computadora, consultado en SSMS. Mantén `A&SG_DataMart` como base.
+5. En **Servidor**, escribe `.` —un punto— para la instancia local predeterminada. En **Base de datos**, escribe `A&SG_DataMart`. Utiliza el mismo servidor en SSMS.
 6. Acepta el cambio y comprueba el servidor y la base en la conexión de las consultas de **Transformar datos**.
 7. En **Editar permisos** o en el aviso que aparezca al conectar, configura la autenticación válida para esa instancia. Para Windows se utilizan los permisos de tu usuario; para autenticación de base de datos, el usuario SQL autorizado.
 8. Pulsa **Actualizar** en Inicio y espera a que terminen los avisos.
 9. Comprueba las páginas inferiores **Rendimiento del personal** y **Bono por efectividad**.
 
-No copies el servidor de las capturas. No introduzcas un correo de GitHub como credencial de SQL Server. Cambiar el nombre del servidor no crea la base: la instalación de los apartados anteriores debe existir en esa instancia.
+El punto `.` identifica la instancia local predeterminada; no inicia el servicio SQL Server. En una instalación con nombre, utiliza `.\SQLEXPRESS` u otro nombre real de instancia, tanto en SSMS como en Power BI. La base debe estar cargada previamente según los apartados 1 y 2.
 
-### 4.3 Comprobar lo que aparece
+### 4.3 Utilizar Importar en la copia de trabajo
+
+Abrir un PBIX conserva el modo de conexión con el que fue guardado. Cambiar el servidor no cambia automáticamente ese modo.
+
+1. Selecciona la vista **Modelo** en la barra izquierda.
+2. Selecciona una de las cinco tablas del modelo y abre el panel **Propiedades**.
+3. Despliega **Avanzado** y consulta **Modo de almacenamiento**.
+4. Para las tablas que ya indican **Importar**, conserva esa configuración. Para las que indican **DirectQuery**, selecciona **Importar** y confirma el cambio en tu copia local. La conversión a Importar es un cambio de una sola dirección para esas tablas.
+5. Repite la revisión para `vw_dim_trabajador`, `vw_dim_tiempo`, `vw_dim_proyecto`, `vw_dim_administrador` y `vw_rendimiento_kpis`.
+6. En **Inicio**, pulsa **Actualizar** con SQL Server iniciado para traer los datos a la copia del reporte.
+7. Guarda con **Ctrl + S**. Conserva las relaciones, medidas y visuales del archivo.
+
+En modo Importar, Power BI guarda una copia de los datos. Después de ejecutar otra carga ETL en SQL Server, pulsa **Actualizar** para incorporar sus resultados al reporte. Cambiar un filtro no vuelve a ejecutar el ETL.
+
+### 4.4 Comprobar lo que aparece
 
 1. En la página de rendimiento, limpia los filtros de trabajador y mes.
 2. Debes ver 582 asistencias, 582 tareas y las cuatro tasas/puntajes del apartado 2.5.
@@ -240,7 +263,7 @@ La tarjeta Total tareas puede estar alojada en `vw_dim_administrador` dentro del
 Si solo necesitas abrir el archivo terminado, puedes pasar al apartado 9. Para mostrar cómo se construye, añade una página vacía en tu copia y sigue el apartado 7 usando las medidas existentes.
 
 <a id="reporte-nuevo"></a>
-## 5. Construir el reporte desde una página vacía
+## 5. Opción B: crear los dashboards desde cero
 
 Este recorrido empieza en la primera apertura de Power BI Desktop y termina con las dos páginas del reporte. Después de completar la carga SQL de los apartados 1 y 2, sigue los apartados **5, 6, 7, 8 y 9**, en ese orden. No necesitas abrir un PBIX existente. La construcción completa se prepara antes de la demostración de diez minutos.
 
@@ -248,20 +271,24 @@ Este recorrido empieza en la primera apertura de Power BI Desktop y termina con 
 
 Abre **Power BI Desktop** desde el menú Inicio de Windows. En la pantalla inicial elige **Informe en blanco**; también puedes entrar por **Archivo → Nuevo**. Trabajarás en Desktop con SQL Server local, sin publicar en Power BI Service.
 
-En SSMS, pulsa **Nueva consulta** y ejecuta lo siguiente para obtener el servidor que utilizarás en Power BI:
+Para este recorrido se utiliza la instancia local predeterminada de SQL Server, cuyo nombre abreviado es **`.`**. El servicio debe estar iniciado y `A&SG_DataMart` debe contener los resultados de la carga. En SSMS conéctate también a `.`. Si tu instalación es una instancia con nombre, usa su nombre real, por ejemplo `.\SQLEXPRESS`, en las dos aplicaciones.
 
-```sql
-SELECT CONVERT(nvarchar(128), SERVERPROPERTY('ServerName')) AS servidor;
-```
+Antes de cargar las vistas, activa la detección de relaciones:
 
-Copia el resultado de la columna `servidor` y regresa a Power BI.
+1. Abre **Archivo → Opciones y configuración → Opciones**.
+2. En **Archivo actual → Carga de datos**, busca **Relaciones**.
+3. Activa **Detectar automáticamente nuevas relaciones después de cargar los datos**.
+4. Mantén activada **Importar relaciones de orígenes de datos en la primera carga**, cuando aparezca esa opción.
+5. Pulsa **Aceptar** para regresar al informe en blanco.
+
+Ahora conecta el Data Mart:
 
 1. Mantén abierto el informe en blanco.
 2. En Inicio, pulsa **Obtener datos → SQL Server**. Si no aparece, usa **Más** y busca SQL Server.
-3. En **Servidor**, escribe la instancia utilizada en SSMS.
+3. En **Servidor**, escribe **`.`**, un punto sin comillas, para la instancia local predeterminada.
 4. En **Base de datos**, escribe `A&SG_DataMart`.
-5. Selecciona **DirectQuery**, que es el modo indicado para esta construcción del proyecto. Necesitará SQL Server disponible al consultar.
-6. Acepta y configura las credenciales autorizadas.
+5. En **Modo de conectividad de datos**, selecciona **Importar**. Power BI copiará los datos de las vistas al informe.
+6. Pulsa **Aceptar**. En la ventana de credenciales selecciona **Windows → Usar mis credenciales actuales**, para la cuenta Windows autorizada en esa instancia, y pulsa **Conectar**. Una instancia configurada con usuario SQL utiliza la opción **Base de datos** y sus credenciales autorizadas.
 7. En la ventana Navegador, selecciona únicamente estas cinco vistas:
 
 | Seleccionar | No confundir con |
@@ -275,16 +302,11 @@ Copia el resultado de la columna `servidor` y regresa a Power BI.
 8. Pulsa **Cargar**. No es necesario pegar consultas SQL en la ventana de conexión para este recorrido.
 9. Cuando termine, comprueba que aparecen las cinco vistas en el panel **Datos**; algunas versiones lo llaman **Campos**.
 
-### 5.2 Crear las cuatro relaciones
+### 5.2 Detectar automáticamente y comprobar el modelo estrella
 
-1. En la barra izquierda, selecciona la vista **Modelo**, identificada por un diagrama de tablas.
-2. Revisa las relaciones existentes y conserva las que coincidan con la tabla de este apartado; agrega únicamente las que falten.
-3. Abre **Administrar relaciones → Nueva**.
-4. Selecciona la dimensión y el campo de su identificador; en el otro lado, la vista de hechos y el mismo campo.
-5. Utiliza cardinalidad **Uno a varios (1:*)**, con el uno en la dimensión y varios en hechos. Si el diálogo presenta primero hechos, se verá `*:1` con los lados invertidos; el significado debe ser el mismo.
-6. Selecciona dirección de filtro **Única** desde dimensión hacia hechos.
-7. Marca la relación como activa y acepta.
-8. Repite hasta completar esta tabla:
+1. Terminada la importación, pulsa el icono de **Modelo** en la barra izquierda: es el que muestra tablas conectadas.
+2. Abre **Inicio / Modelado → Administrar relaciones** y pulsa **Detección automática / Autodetectar**. Power BI analiza las columnas importadas para proponer relaciones.
+3. Cierra el cuadro y revisa las líneas del modelo. La configuración que debe quedar es la siguiente:
 
 | Dimensión: lado uno | Columna en ambos lados | Hechos: lado varios |
 | --- | --- | --- |
@@ -293,8 +315,12 @@ Copia el resultado de la columna `servidor` y regresa a Power BI.
 | `vw_dim_proyecto` | `id_proyecto` | `vw_rendimiento_kpis` |
 | `vw_dim_administrador` | `id_administrador` | `vw_rendimiento_kpis` |
 
-9. Las relaciones deben aparecer activas, con cuatro líneas que conectan dimensiones y hechos.
-10. No relaciones las dimensiones entre sí. No relaciones por `nombre_completo`, `mes` ni columnas terminadas en `_origen`.
+4. Abre cada relación con doble clic en su línea. Comprueba que utiliza el identificador de la tabla anterior, cardinalidad **Uno a varios (1:*)**, dirección de filtro **Única** desde dimensión hacia hechos y relación **Activa**. Pulsa **Aceptar** para guardar la configuración revisada.
+5. Coloca `vw_rendimiento_kpis` en el centro arrastrando el encabezado de su tabla. Distribuye alrededor las cuatro dimensiones. La detección crea relaciones; la colocación visual se organiza con el ratón.
+6. Guarda el archivo con **Archivo → Guardar como** y el nombre `Simulacion_Rendimiento_Personal.pbix` en tu carpeta de trabajo.
+7. Continúa en el apartado 6 para crear las medidas; después completa los apartados 7, 8 y 9 para construir, comprobar y guardar las dos páginas finales.
+
+La detección automática es una ayuda de Power BI y no garantiza las cuatro relaciones: el origen seleccionado contiene vistas, que no publican las claves foráneas como las tablas físicas. La tabla anterior define el modelo que se debe verificar. Para completar una relación no detectada, usa **Administrar relaciones → Nueva**, selecciona dimensión e identificador, hechos y el mismo identificador, y aplica **1:* → Única → Activa → Aceptar**. Conserva únicamente las cuatro relaciones indicadas, sin conexiones entre dimensiones.
 
 Puedes comparar con [06_Modelo_PowerBI.png](../03_Vistas_PowerBI/06_Modelo_PowerBI.png).
 
@@ -440,7 +466,7 @@ Elige cada medida por su nombre e icono de calculadora para mostrar el indicador
 3. En Formato, elige una lista si deseas ver casillas, o un desplegable si necesitas ahorrar espacio.
 4. Pon el título **Mes de análisis**. En muchas versiones está en **General → Título**.
 5. Si debajo aparece `nombre_mes` y no lo quieres mostrar, desactiva **Encabezado de segmentación / Encabezado del segmentador**. El título personalizado puede seguir visible.
-6. Para ordenar los nombres cronológicamente, selecciona la columna `nombre_mes` y utiliza **Herramientas de columna → Ordenar por columna → mes**, cuando esté disponible en tu modo de conexión. Después ordena el segmentador en forma ascendente. 
+6. Para ordenar los nombres cronológicamente, selecciona la columna `nombre_mes` y utiliza **Herramientas de columna → Ordenar por columna → mes**. Después ordena el segmentador en forma ascendente.
 
 **Filtro de trabajador:**
 

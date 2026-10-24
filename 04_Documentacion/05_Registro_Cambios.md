@@ -104,3 +104,10 @@ Después de cada aporte real, agregar una entrada con integrante, archivos, camb
 - El recorrido comienza en la creación de las bases y continúa con numeración desde el apartado 1.
 - Se conservaron tablas, enlaces, instrucciones de clic derecho y resultados de comprobación; se retiraron los apartados de preparación y diagnóstico.
 - Se actualizaron los enlaces desde la documentación.
+
+## Conexión e importación de Power BI
+
+- Se documentaron dos recorridos: descargar el PBIX terminado o construir los dashboards desde un informe en blanco.
+- La guía utiliza Importar y el servidor `.` para la instancia local predeterminada.
+- Se detallaron la detección automática y comprobación de las cuatro relaciones, además de la actualización de datos después del ETL.
+- Los archivos PBIX, scripts SQL y capturas se conservan sin cambios.
