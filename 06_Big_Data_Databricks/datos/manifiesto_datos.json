@@ -1,0 +1,777 @@
+{
+  "script": "generar_sinteticos.py",
+  "version": "1.0",
+  "fecha_generacion": "2026-11-21T02:13:37",
+  "semilla": 2026,
+  "escalas": [
+    5000,
+    10000
+  ],
+  "entradas": {
+    "asistencia": "export/Asistencia.csv",
+    "tareas": "export/Tareas.csv"
+  },
+  "regla": {
+    "plantilla": "cada trabajador sintético copia fechas y tareas de un trabajador base elegido al azar",
+    "primer_id_trabajador_sintetico": 1001,
+    "desfase_entrada_segundos": 300,
+    "limite_puntual": "antes de 09:41:00 = A tiempo; 09:41:00 o después = Tardanza",
+    "hora_salida": "18:00:00",
+    "fecha_calculada": "dia_entrada",
+    "prob_variacion_tarea": 0.3,
+    "estados_tarea": [
+      "Completada",
+      "En Progreso",
+      "Asignada"
+    ],
+    "marca_fuera_plazo": "[ENTREGADO FUERA DE PLAZO]"
+  },
+  "trabajadores_sinteticos_y_plantilla": [
+    {
+      "id": 1001,
+      "plantilla": 2
+    },
+    {
+      "id": 1002,
+      "plantilla": 10
+    },
+    {
+      "id": 1003,
+      "plantilla": 10
+    },
+    {
+      "id": 1004,
+      "plantilla": 5
+    },
+    {
+      "id": 1005,
+      "plantilla": 9
+    },
+    {
+      "id": 1006,
+      "plantilla": 5
+    },
+    {
+      "id": 1007,
+      "plantilla": 6
+    },
+    {
+      "id": 1008,
+      "plantilla": 8
+    },
+    {
+      "id": 1009,
+      "plantilla": 3
+    },
+    {
+      "id": 1010,
+      "plantilla": 1
+    },
+    {
+      "id": 1011,
+      "plantilla": 2
+    },
+    {
+      "id": 1012,
+      "plantilla": 1
+    },
+    {
+      "id": 1013,
+      "plantilla": 5
+    },
+    {
+      "id": 1014,
+      "plantilla": 9
+    },
+    {
+      "id": 1015,
+      "plantilla": 6
+    },
+    {
+      "id": 1016,
+      "plantilla": 2
+    },
+    {
+      "id": 1017,
+      "plantilla": 8
+    },
+    {
+      "id": 1018,
+      "plantilla": 5
+    },
+    {
+      "id": 1019,
+      "plantilla": 8
+    },
+    {
+      "id": 1020,
+      "plantilla": 2
+    },
+    {
+      "id": 1021,
+      "plantilla": 7
+    },
+    {
+      "id": 1022,
+      "plantilla": 10
+    },
+    {
+      "id": 1023,
+      "plantilla": 2
+    },
+    {
+      "id": 1024,
+      "plantilla": 8
+    },
+    {
+      "id": 1025,
+      "plantilla": 11
+    },
+    {
+      "id": 1026,
+      "plantilla": 5
+    },
+    {
+      "id": 1027,
+      "plantilla": 8
+    },
+    {
+      "id": 1028,
+      "plantilla": 2
+    },
+    {
+      "id": 1029,
+      "plantilla": 5
+    },
+    {
+      "id": 1030,
+      "plantilla": 6
+    },
+    {
+      "id": 1031,
+      "plantilla": 11
+    },
+    {
+      "id": 1032,
+      "plantilla": 6
+    },
+    {
+      "id": 1033,
+      "plantilla": 8
+    },
+    {
+      "id": 1034,
+      "plantilla": 3
+    },
+    {
+      "id": 1035,
+      "plantilla": 11
+    },
+    {
+      "id": 1036,
+      "plantilla": 6
+    },
+    {
+      "id": 1037,
+      "plantilla": 5
+    },
+    {
+      "id": 1038,
+      "plantilla": 7
+    },
+    {
+      "id": 1039,
+      "plantilla": 8
+    },
+    {
+      "id": 1040,
+      "plantilla": 7
+    },
+    {
+      "id": 1041,
+      "plantilla": 7
+    },
+    {
+      "id": 1042,
+      "plantilla": 11
+    },
+    {
+      "id": 1043,
+      "plantilla": 3
+    },
+    {
+      "id": 1044,
+      "plantilla": 6
+    },
+    {
+      "id": 1045,
+      "plantilla": 11
+    },
+    {
+      "id": 1046,
+      "plantilla": 7
+    },
+    {
+      "id": 1047,
+      "plantilla": 7
+    },
+    {
+      "id": 1048,
+      "plantilla": 1
+    },
+    {
+      "id": 1049,
+      "plantilla": 9
+    },
+    {
+      "id": 1050,
+      "plantilla": 5
+    },
+    {
+      "id": 1051,
+      "plantilla": 1
+    },
+    {
+      "id": 1052,
+      "plantilla": 7
+    },
+    {
+      "id": 1053,
+      "plantilla": 6
+    },
+    {
+      "id": 1054,
+      "plantilla": 3
+    },
+    {
+      "id": 1055,
+      "plantilla": 5
+    },
+    {
+      "id": 1056,
+      "plantilla": 7
+    },
+    {
+      "id": 1057,
+      "plantilla": 2
+    },
+    {
+      "id": 1058,
+      "plantilla": 6
+    },
+    {
+      "id": 1059,
+      "plantilla": 3
+    },
+    {
+      "id": 1060,
+      "plantilla": 2
+    },
+    {
+      "id": 1061,
+      "plantilla": 8
+    },
+    {
+      "id": 1062,
+      "plantilla": 5
+    },
+    {
+      "id": 1063,
+      "plantilla": 9
+    },
+    {
+      "id": 1064,
+      "plantilla": 6
+    },
+    {
+      "id": 1065,
+      "plantilla": 8
+    },
+    {
+      "id": 1066,
+      "plantilla": 5
+    },
+    {
+      "id": 1067,
+      "plantilla": 10
+    },
+    {
+      "id": 1068,
+      "plantilla": 10
+    },
+    {
+      "id": 1069,
+      "plantilla": 7
+    },
+    {
+      "id": 1070,
+      "plantilla": 3
+    },
+    {
+      "id": 1071,
+      "plantilla": 2
+    },
+    {
+      "id": 1072,
+      "plantilla": 5
+    },
+    {
+      "id": 1073,
+      "plantilla": 9
+    },
+    {
+      "id": 1074,
+      "plantilla": 8
+    },
+    {
+      "id": 1075,
+      "plantilla": 6
+    },
+    {
+      "id": 1076,
+      "plantilla": 7
+    },
+    {
+      "id": 1077,
+      "plantilla": 2
+    },
+    {
+      "id": 1078,
+      "plantilla": 3
+    },
+    {
+      "id": 1079,
+      "plantilla": 8
+    },
+    {
+      "id": 1080,
+      "plantilla": 9
+    },
+    {
+      "id": 1081,
+      "plantilla": 11
+    },
+    {
+      "id": 1082,
+      "plantilla": 1
+    },
+    {
+      "id": 1083,
+      "plantilla": 5
+    },
+    {
+      "id": 1084,
+      "plantilla": 6
+    },
+    {
+      "id": 1085,
+      "plantilla": 8
+    },
+    {
+      "id": 1086,
+      "plantilla": 2
+    },
+    {
+      "id": 1087,
+      "plantilla": 5
+    },
+    {
+      "id": 1088,
+      "plantilla": 9
+    },
+    {
+      "id": 1089,
+      "plantilla": 2
+    },
+    {
+      "id": 1090,
+      "plantilla": 2
+    },
+    {
+      "id": 1091,
+      "plantilla": 3
+    },
+    {
+      "id": 1092,
+      "plantilla": 9
+    },
+    {
+      "id": 1093,
+      "plantilla": 8
+    },
+    {
+      "id": 1094,
+      "plantilla": 7
+    },
+    {
+      "id": 1095,
+      "plantilla": 9
+    },
+    {
+      "id": 1096,
+      "plantilla": 5
+    },
+    {
+      "id": 1097,
+      "plantilla": 2
+    },
+    {
+      "id": 1098,
+      "plantilla": 9
+    },
+    {
+      "id": 1099,
+      "plantilla": 3
+    },
+    {
+      "id": 1100,
+      "plantilla": 1
+    },
+    {
+      "id": 1101,
+      "plantilla": 10
+    },
+    {
+      "id": 1102,
+      "plantilla": 2
+    },
+    {
+      "id": 1103,
+      "plantilla": 7
+    },
+    {
+      "id": 1104,
+      "plantilla": 3
+    },
+    {
+      "id": 1105,
+      "plantilla": 6
+    },
+    {
+      "id": 1106,
+      "plantilla": 11
+    },
+    {
+      "id": 1107,
+      "plantilla": 2
+    },
+    {
+      "id": 1108,
+      "plantilla": 6
+    },
+    {
+      "id": 1109,
+      "plantilla": 10
+    },
+    {
+      "id": 1110,
+      "plantilla": 2
+    },
+    {
+      "id": 1111,
+      "plantilla": 9
+    },
+    {
+      "id": 1112,
+      "plantilla": 6
+    },
+    {
+      "id": 1113,
+      "plantilla": 1
+    },
+    {
+      "id": 1114,
+      "plantilla": 6
+    },
+    {
+      "id": 1115,
+      "plantilla": 6
+    },
+    {
+      "id": 1116,
+      "plantilla": 10
+    },
+    {
+      "id": 1117,
+      "plantilla": 6
+    },
+    {
+      "id": 1118,
+      "plantilla": 2
+    },
+    {
+      "id": 1119,
+      "plantilla": 10
+    },
+    {
+      "id": 1120,
+      "plantilla": 1
+    },
+    {
+      "id": 1121,
+      "plantilla": 9
+    },
+    {
+      "id": 1122,
+      "plantilla": 7
+    },
+    {
+      "id": 1123,
+      "plantilla": 11
+    },
+    {
+      "id": 1124,
+      "plantilla": 9
+    },
+    {
+      "id": 1125,
+      "plantilla": 8
+    },
+    {
+      "id": 1126,
+      "plantilla": 5
+    },
+    {
+      "id": 1127,
+      "plantilla": 1
+    },
+    {
+      "id": 1128,
+      "plantilla": 11
+    },
+    {
+      "id": 1129,
+      "plantilla": 11
+    },
+    {
+      "id": 1130,
+      "plantilla": 8
+    },
+    {
+      "id": 1131,
+      "plantilla": 5
+    },
+    {
+      "id": 1132,
+      "plantilla": 7
+    },
+    {
+      "id": 1133,
+      "plantilla": 11
+    },
+    {
+      "id": 1134,
+      "plantilla": 10
+    },
+    {
+      "id": 1135,
+      "plantilla": 9
+    },
+    {
+      "id": 1136,
+      "plantilla": 9
+    },
+    {
+      "id": 1137,
+      "plantilla": 5
+    },
+    {
+      "id": 1138,
+      "plantilla": 8
+    },
+    {
+      "id": 1139,
+      "plantilla": 11
+    },
+    {
+      "id": 1140,
+      "plantilla": 3
+    },
+    {
+      "id": 1141,
+      "plantilla": 1
+    },
+    {
+      "id": 1142,
+      "plantilla": 3
+    },
+    {
+      "id": 1143,
+      "plantilla": 9
+    },
+    {
+      "id": 1144,
+      "plantilla": 5
+    },
+    {
+      "id": 1145,
+      "plantilla": 6
+    },
+    {
+      "id": 1146,
+      "plantilla": 7
+    },
+    {
+      "id": 1147,
+      "plantilla": 10
+    },
+    {
+      "id": 1148,
+      "plantilla": 11
+    },
+    {
+      "id": 1149,
+      "plantilla": 5
+    },
+    {
+      "id": 1150,
+      "plantilla": 6
+    },
+    {
+      "id": 1151,
+      "plantilla": 5
+    },
+    {
+      "id": 1152,
+      "plantilla": 6
+    },
+    {
+      "id": 1153,
+      "plantilla": 7
+    },
+    {
+      "id": 1154,
+      "plantilla": 1
+    },
+    {
+      "id": 1155,
+      "plantilla": 6
+    },
+    {
+      "id": 1156,
+      "plantilla": 7
+    },
+    {
+      "id": 1157,
+      "plantilla": 6
+    },
+    {
+      "id": 1158,
+      "plantilla": 1
+    },
+    {
+      "id": 1159,
+      "plantilla": 9
+    },
+    {
+      "id": 1160,
+      "plantilla": 6
+    },
+    {
+      "id": 1161,
+      "plantilla": 10
+    },
+    {
+      "id": 1162,
+      "plantilla": 9
+    }
+  ],
+  "archivos": [
+    {
+      "archivo": "asistencias_base.csv",
+      "tabla": "Asistencia",
+      "escala": "base",
+      "filas": 582,
+      "filas_base": 582,
+      "filas_sinteticas": 0,
+      "trabajadores_distintos": 10,
+      "bytes": 38499,
+      "sha256": "95c941dd982a412f53f68889b5ce93b6f16ef2cfec1b0b587044fb8ab681361e",
+      "TPA": 92.1,
+      "ICT": 56.36,
+      "TDT": 3.44,
+      "IEP": 75.12,
+      "validacion": "OK"
+    },
+    {
+      "archivo": "tareas_base.csv",
+      "tabla": "Tareas",
+      "escala": "base",
+      "filas": 582,
+      "filas_base": 582,
+      "filas_sinteticas": 0,
+      "trabajadores_distintos": 10,
+      "bytes": 39863,
+      "sha256": "44ba3038e4224b96f2ae1af3e6e77c0e8fa05f91a7e24772f57c16fb5df71fcf",
+      "TPA": 92.1,
+      "ICT": 56.36,
+      "TDT": 3.44,
+      "IEP": 75.12,
+      "validacion": "OK"
+    },
+    {
+      "archivo": "asistencias_5000.csv",
+      "tabla": "Asistencia",
+      "escala": "5000",
+      "filas": 5000,
+      "filas_base": 582,
+      "filas_sinteticas": 4418,
+      "trabajadores_distintos": 85,
+      "bytes": 347342,
+      "sha256": "2fff3dd8820ad19fbc68b2de0ae229cc11b81e3b59458c76d7abb63614d3d1d1",
+      "TPA": 94.52,
+      "ICT": 57.1,
+      "TDT": 2.9,
+      "IEP": 76.33,
+      "validacion": "OK"
+    },
+    {
+      "archivo": "tareas_5000.csv",
+      "tabla": "Tareas",
+      "escala": "5000",
+      "filas": 5000,
+      "filas_base": 582,
+      "filas_sinteticas": 4418,
+      "trabajadores_distintos": 85,
+      "bytes": 356993,
+      "sha256": "61db9feba7b1bdab8f10181ad9c7f935afe8b005420e40a84ceb97feeecaee8c",
+      "TPA": 94.52,
+      "ICT": 57.1,
+      "TDT": 2.9,
+      "IEP": 76.33,
+      "validacion": "OK"
+    },
+    {
+      "archivo": "asistencias_10000.csv",
+      "tabla": "Asistencia",
+      "escala": "10000",
+      "filas": 10000,
+      "filas_base": 582,
+      "filas_sinteticas": 9418,
+      "trabajadores_distintos": 172,
+      "bytes": 697343,
+      "sha256": "256903be51bab3abccd8928563dbc912ace63e37857818b366fea866b79c07c0",
+      "TPA": 92.82,
+      "ICT": 55.97,
+      "TDT": 3.65,
+      "IEP": 75.1,
+      "validacion": "OK"
+    },
+    {
+      "archivo": "tareas_10000.csv",
+      "tabla": "Tareas",
+      "escala": "10000",
+      "filas": 10000,
+      "filas_base": 582,
+      "filas_sinteticas": 9418,
+      "trabajadores_distintos": 172,
+      "bytes": 715849,
+      "sha256": "4bdadf017219f852c206128da9a0a6158db0a7ffa230dcf7813b916e3f3c2245",
+      "TPA": 92.82,
+      "ICT": 55.97,
+      "TDT": 3.65,
+      "IEP": 75.1,
+      "validacion": "OK"
+    }
+  ]
+}
