@@ -37,3 +37,30 @@ Luego importar `notebook/EXP02_Databricks_Rendimiento.ipynb` en Databricks y eje
   la hora de entrada varía ±5 min. Se mantienen la regla de 09:41:00, la salida a las 18:00, una fila por trabajador y día, y los estados
   Completada / En Progreso / Asignada. La escala de 10 000 contiene a la de 5 000. No hay nombres, correos, teléfonos ni PIN.
 - Los scripts y el notebook se elaboraron con ayuda de IA (Claude), con verificación del grupo (ver 5.7 del informe).
+
+## Resultados de la ejecución (21/11/2026, Databricks Free Edition, serverless)
+
+Entorno (captura D-09): Spark 4.2.0, runtime `client.6.6` (variable `DATABRICKS_RUNTIME_VERSION`), Python 3.12.3, compute serverless.
+Método: por escala y operación, 1 calentamiento (no entra en el resumen) + 5 repeticiones medidas con `time.perf_counter`.
+Carga = leer el CSV del volumen + `saveAsTable` (overwrite). Consulta = `COUNT(*) … GROUP BY` + `collect()`.
+
+| Escala | Operación | Mediana (s) | Mín. (s) | Máx. (s) |
+|---:|---|---:|---:|---:|
+| 582 | carga asistencias | 2,2914 | 1,9490 | 2,4674 |
+| 582 | carga tareas | 1,9786 | 1,9591 | 2,0347 |
+| 582 | consulta asistencias | 0,6419 | 0,6342 | 0,7030 |
+| 582 | consulta tareas | 0,6124 | 0,5985 | 0,6598 |
+| 5 000 | carga asistencias | 1,8955 | 1,8466 | 1,9905 |
+| 5 000 | carga tareas | 1,8502 | 1,7227 | 1,8953 |
+| 5 000 | consulta asistencias | 0,6640 | 0,5523 | 0,7596 |
+| 5 000 | consulta tareas | 0,5706 | 0,5450 | 0,5959 |
+| 10 000 | carga asistencias | 1,7807 | 1,7494 | 1,8952 |
+| 10 000 | carga tareas | 1,7938 | 1,7505 | 1,8287 |
+| 10 000 | consulta asistencias | 0,5493 | 0,5199 | 0,6180 |
+| 10 000 | consulta tareas | 0,5727 | 0,5312 | 0,6118 |
+
+KPI calculados en Databricks (`resultados/kpi_por_escala.csv`): la escala base da **TPA 92,10 %, ICT 56,36 %, TDT 3,44 %, IEP 75,12**,
+igual que Power BI. Las escalas 5 000 y 10 000 coinciden con el manifiesto del generador.
+
+Capturas: `D-01` … `D-09` (pasos 4–14), `T-01` (CSV de tiempos y resumen), `T-02` (registro RUN-03 a RUN-05 y KPI por escala),
+`T-03` (gráfico tiempo vs. filas). Los códigos E-xx los asigna el encargado.

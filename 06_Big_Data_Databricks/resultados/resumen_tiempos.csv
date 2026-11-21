@@ -1,0 +1,13 @@
+escala_filas,operacion,tabla,n,mediana_s,minimo_s,maximo_s,filas_por_s,bytes_csv,bytes_tabla
+582,carga_asistencias,workspace.bd_rendimiento.tb_asistencias,5,2.2914,1.949,2.4674,254.0,38499,6319
+582,carga_tareas,workspace.bd_rendimiento.tb_tareas,5,1.9786,1.9591,2.0347,294.0,39863,7234
+582,consulta_asistencias,workspace.bd_rendimiento.tb_asistencias,5,0.6419,0.6342,0.703,907.0,38499,6319
+582,consulta_tareas,workspace.bd_rendimiento.tb_tareas,5,0.6124,0.5985,0.6598,950.0,39863,7234
+5000,carga_asistencias,workspace.bd_rendimiento.tb_asistencias_5000,5,1.8955,1.8466,1.9905,2638.0,347342,29451
+5000,carga_tareas,workspace.bd_rendimiento.tb_tareas_5000,5,1.8502,1.7227,1.8953,2702.0,356993,19324
+5000,consulta_asistencias,workspace.bd_rendimiento.tb_asistencias_5000,5,0.664,0.5523,0.7596,7530.0,347342,29451
+5000,consulta_tareas,workspace.bd_rendimiento.tb_tareas_5000,5,0.5706,0.545,0.5959,8763.0,356993,19324
+10000,carga_asistencias,workspace.bd_rendimiento.tb_asistencias_10000,5,1.7807,1.7494,1.8952,5616.0,697343,55022
+10000,carga_tareas,workspace.bd_rendimiento.tb_tareas_10000,5,1.7938,1.7505,1.8287,5575.0,715849,30643
+10000,consulta_asistencias,workspace.bd_rendimiento.tb_asistencias_10000,5,0.5493,0.5199,0.618,18205.0,697343,55022
+10000,consulta_tareas,workspace.bd_rendimiento.tb_tareas_10000,5,0.5727,0.5312,0.6118,17461.0,715849,30643

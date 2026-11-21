@@ -1,0 +1,4 @@
+run_id,inicio,fin,notebook,experimento,escala_filas,consultas,ejecuciones,estado
+RUN-03,2026-11-21 02:52:57,2026-11-21 02:53:30,/Users/luishidalgof14@gmail.com/EXP02_Databricks/EXP02_Databricks_Rendimiento,EXP-02,582,carga + GROUP BY Estado_Asistencia; carga + GROUP BY Estado_Tarea,6,Completada
+RUN-04,2026-11-21 02:53:30,2026-11-21 02:54:00,/Users/luishidalgof14@gmail.com/EXP02_Databricks/EXP02_Databricks_Rendimiento,EXP-02,5000,carga + GROUP BY Estado_Asistencia; carga + GROUP BY Estado_Tarea,6,Completada
+RUN-05,2026-11-21 02:54:00,2026-11-21 02:54:29,/Users/luishidalgof14@gmail.com/EXP02_Databricks/EXP02_Databricks_Rendimiento,EXP-02,10000,carga + GROUP BY Estado_Asistencia; carga + GROUP BY Estado_Tarea,6,Completada
