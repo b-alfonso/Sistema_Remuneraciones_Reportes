@@ -1,0 +1,7 @@
+archivo,tabla,escala,filas,filas_base,filas_sinteticas,trabajadores_distintos,bytes,sha256,TPA,ICT,TDT,IEP,validacion
+asistencias_base.csv,Asistencia,base,582,582,0,10,38499,95c941dd982a412f53f68889b5ce93b6f16ef2cfec1b0b587044fb8ab681361e,92.1,56.36,3.44,75.12,OK
+tareas_base.csv,Tareas,base,582,582,0,10,39863,44ba3038e4224b96f2ae1af3e6e77c0e8fa05f91a7e24772f57c16fb5df71fcf,92.1,56.36,3.44,75.12,OK
+asistencias_5000.csv,Asistencia,5000,5000,582,4418,85,347342,2fff3dd8820ad19fbc68b2de0ae229cc11b81e3b59458c76d7abb63614d3d1d1,94.52,57.1,2.9,76.33,OK
+tareas_5000.csv,Tareas,5000,5000,582,4418,85,356993,61db9feba7b1bdab8f10181ad9c7f935afe8b005420e40a84ceb97feeecaee8c,94.52,57.1,2.9,76.33,OK
+asistencias_10000.csv,Asistencia,10000,10000,582,9418,172,697343,256903be51bab3abccd8928563dbc912ace63e37857818b366fea866b79c07c0,92.82,55.97,3.65,75.1,OK
+tareas_10000.csv,Tareas,10000,10000,582,9418,172,715849,4bdadf017219f852c206128da9a0a6158db0a7ffa230dcf7813b916e3f3c2245,92.82,55.97,3.65,75.1,OK
