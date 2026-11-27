@@ -23,6 +23,15 @@ Bronze/Silver/Gold, KPI, visualizaciones y dashboard de Databricks, con su diagr
 | `resultados/` | CSV de tiempos, resumen, registro RUN, KPI por escala y gráfico | Salidas de la ejecución en Databricks. |
 | `capturas/` | `D-01` … `D-09` | Capturas con fecha y código de celda visibles. |
 
+## Experimentaciones de Rendimiento y Evidencias (EXP-04 a EXP-07)
+
+| Carpeta | Experimento | Resumen de la Guía de Ejecución |
+|---|---|---|
+| [`exp04-Ingesta/`](exp04-Ingesta) | **EXP-04: Ingesta (Esquema Explícito vs `inferSchema`)** | Evalúa el impacto en tiempo de lectura y tipado de datos al cargar 15 000 filas de asistencias y tareas con esquema definido (`StructType`) frente a inferencia automática (`inferSchema`). |
+| [`exp05-Formatos/`](exp05-Formatos) | **EXP-05: Formatos de Almacenamiento (CSV vs Parquet vs Delta)** | Compara el tamaño en disco (compresión Snappy), tiempo de persistencia y latencia de consultas agregadas (`GROUP BY`) entre CSV plano, Parquet columnar y tablas Delta Lake. |
+| [`exp06-Particion/`](exp06-Particion) | **EXP-06: Particionamiento de Tablas Delta** | Analiza la optimización por poda de particiones (*partition pruning*) al particionar por mes vs estado frente a una tabla sin particionar, evaluando la prevención del problema de archivos pequeños. |
+| [`exp07-Analitica/`](exp07-Analitica) | **EXP-07: Consulta Analítica con Join y KPIs (IEP)** | Mide la latencia al calcular indicadores de desempeño (TPA, ICT, TDT, IEP) uniendo asistencias y tareas para 262 trabajadores, comparando DataFrame API, Spark SQL y el impacto de `cache()`. |
+
 ## Cómo reproducir
 
 ```bash
