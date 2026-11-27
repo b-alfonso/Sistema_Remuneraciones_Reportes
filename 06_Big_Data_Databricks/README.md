@@ -3,6 +3,11 @@
 Evaluación de la carga y la consulta del conjunto de asistencias y tareas a tres escalas: 582, 5 000 y 10 000 filas por tabla.
 Evidencias **E-08** y **E-14** del informe (puntos 4.2, 4.5, 5.3, 6.2–6.5 y 7.1).
 
+## Solución Big Data completa (Medallion)
+
+La carpeta [`solucion_medallion/`](solucion_medallion) contiene la solución pedida en la entrega final: EDA, limpieza, capas
+Bronze/Silver/Gold, KPI, visualizaciones y dashboard de Databricks, con su diagrama de arquitectura y guía de replicación.
+
 ## Contenido
 
 | Carpeta | Archivo | Uso |
