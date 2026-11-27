@@ -24,23 +24,16 @@ Cada salida del notebook imprime el código de la captura, la fecha y hora de Li
 | **S-11** · `S-11_persistencia_tablas_delta.png` | Inventario de las 10 tablas Delta (capa, filas, bytes, comentario) e historial de versiones de una tabla Gold. | Que todo quedó guardado como tablas Delta documentadas: Bronze y Silver con 15 582 filas por tabla; Gold con 3, 9, 267 y 800 filas. |
 | **S-12a** · `S-12a_dashboard_superior.png` | Dashboard publicado "BASAV · Monitoreo de empleados (Gold)" en Databricks. | Ver sección siguiente. |
 
-## Qué evalúa cada gráfico (S-10b)
+## Qué demuestra cada gráfico (S-10b)
 
-1. **KPI por mes (arriba izquierda)** — líneas de TPA, ICT, TDT e IEP en julio, agosto y septiembre (datos reales).
-   Evalúa si el rendimiento del equipo cambia en el tiempo. Resultado: los cuatro indicadores son estables; el ICT baja de 57,5 a 54,4 en septiembre.
-2. **IEP por trabajador (arriba derecha)** — barras horizontales con el índice de eficiencia de cada trabajador (ID), ordenadas.
-   Evalúa quién tiene mejor y peor desempeño combinado (0,3·TPA + 0,5·ICT + 0,2·(100 − TDT)). Va de 96,0 (ID 2) a 22,0 (ID 9); es la base del bono referencial.
-3. **Hora de entrada (abajo izquierda)** — histograma de las horas de llegada, en azul las asistencias "A tiempo" y en naranja las "Tardanza", con una línea en las 09:41.
-   Evalúa si la regla de puntualidad se aplica bien: todas las barras azules están antes de la línea y todas las naranjas después.
-4. **KPI Gold por escala de datos (abajo derecha)** — barras agrupadas de TPA, ICT, TDT e IEP para 582, 5 000 y 10 000 filas.
-   Evalúa que el pipeline da resultados coherentes al aumentar el volumen. Los sintéticos quedan cerca de la base porque copian el comportamiento de los trabajadores reales; no describen personas reales.
+**Gráfico 1 · KPI por mes (arriba a la izquierda).** Muestra la evolución de los cuatro indicadores de julio a septiembre con los datos reales. Las líneas de TPA (≈92 %), IEP (≈75) y TDT (≈3 %) son casi horizontales, mientras que el ICT baja de 57,53 % en agosto a 54,40 % en septiembre. Demuestra que el desempeño del equipo es estable y que la única señal de alerta es el cumplimiento de tareas sin observaciones en septiembre, que es lo que arrastra el IEP de ese mes a 74,09.
 
-## Qué muestra el dashboard (S-12a)
+**Gráfico 2 · IEP por trabajador (arriba a la derecha).** Ordena a los diez trabajadores según su índice de eficiencia. El ID 2 lidera con 96,00 porque combina 95 % de puntualidad, 95 % de tareas sin observaciones y ninguna fuera de plazo; el ID 9 queda último con 22,00 (40 % de puntualidad, ninguna tarea sin observaciones y la mitad fuera de plazo). Cinco trabajadores empatan en 77,27: todos tienen 100 % de puntualidad, así que lo que los separa del primer puesto es solo el ICT. Demuestra que, con los pesos del IEP (50 % para el ICT), la calidad de las tareas pesa más que la puntualidad para diferenciar a las personas; este gráfico es la base del bono referencial.
 
-- **Seis tarjetas**: TPA 92,1 %, ICT 56,36 %, TDT 3,44 %, IEP 75,12, 582 asistencias y 582 tareas (datos reales). Son los mismos valores del tablero de Power BI.
-- **KPI por mes**: líneas de los cuatro indicadores por mes (mismo contenido que el gráfico 1).
-- **IEP por trabajador**: barras por ID (mismo contenido que el gráfico 2).
-- **KPI por escala de datos**: barras agrupadas por escala (mismo contenido que el gráfico 4).
-- **Tareas en cuarentena por escala**: cuántas tareas sintéticas tienen alerta de calidad y de qué tipo (complementa S-07).
+**Gráfico 3 · Hora de entrada (abajo a la izquierda).** Es un histograma de las horas de llegada: las barras azules son asistencias "A tiempo" y las naranjas "Tardanza", con una línea punteada en las 09:41. Todas las barras azules quedan antes de la línea y todas las naranjas después, sin ningún cruce. Demuestra que la regla de puntualidad se aplica correctamente en los datos (la misma comprobación da 0 errores en el diagnóstico de calidad, Figura S-05) y que las 46 tardanzas son llegadas posteriores al límite, no errores de registro.
 
-El dashboard lee directamente las tablas `workspace.mon_gold` y `workspace.mon_silver.tareas_cuarentena`, así que se actualiza si se vuelve a ejecutar el notebook.
+**Gráfico 4 · KPI por escala de datos (abajo a la derecha).** Compara los cuatro indicadores calculados con 582 filas reales y con 5 000 y 10 000 filas sintéticas. Las barras de cada indicador tienen casi la misma altura: TPA entre 92,10 % y 94,52 %, ICT entre 55,97 % y 57,10 %, TDT entre 2,90 % y 3,65 % e IEP entre 75,10 y 76,33. Demuestra que el pipeline Bronze–Silver–Gold produce resultados coherentes cuando crece el volumen y que los datos sintéticos conservan el comportamiento de los reales, por lo que sirven para las pruebas de rendimiento de EXP-02.
+
+## Qué demuestra el dashboard (S-12a)
+
+La captura muestra el tablero que vería un jefe de área. Las seis tarjetas resumen el trimestre: el 92,1 % de las asistencias fue puntual, el 56,36 % de las tareas se completó sin observaciones, solo el 3,44 % quedó fuera de plazo y el índice global es 75,12 sobre 100. Debajo, el gráfico de líneas permite ver la tendencia mensual y el de barras identifica a los trabajadores que necesitan apoyo (IDs 9 y 11). Los dos gráficos inferiores son de control técnico: el primero confirma que los indicadores se mantienen al aumentar los datos y el segundo muestra cuántas tareas sintéticas quedaron en cuarentena por alertas de calidad (ninguna en los datos reales). Con este tablero se demuestra que la solución Big Data entrega la misma información que Power BI, directamente desde las tablas Gold de Databricks.
