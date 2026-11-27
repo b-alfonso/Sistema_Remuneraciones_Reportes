@@ -8,6 +8,8 @@ Evidencias **E-08** y **E-14** del informe (puntos 4.2, 4.5, 5.3, 6.2–6.5 y 7.
 La carpeta [`solucion_medallion/`](solucion_medallion) contiene la solución pedida en la entrega final: EDA, limpieza, capas
 Bronze/Silver/Gold, KPI, visualizaciones y dashboard de Databricks, con su diagrama de arquitectura y guía de replicación.
 
+**¿Nunca usaste Databricks?** Empieza por la [guía rápida](GUIA_RAPIDA_DATABRICKS.md).
+
 ## Contenido
 
 | Carpeta | Archivo | Uso |

@@ -37,7 +37,7 @@ SQL Server (A&SG_OLTP) ──ETL──► A&SG_DataMart (modelo estrella) ──
 **Solución BI (SQL Server + Power BI).** Seguir [`04_Documentacion/00_Orden_Ejecucion.md`](04_Documentacion/00_Orden_Ejecucion.md)
 y luego la [guía completa](05_Procedimientos_Replicacion/09_Guia_Completa.md).
 
-**Solución Big Data (Databricks).** Seguir
+**Solución Big Data y experimentos (Databricks).** Para quien nunca usó Databricks: [guía rápida](06_Big_Data_Databricks/GUIA_RAPIDA_DATABRICKS.md). Detalle técnico:
 [`06_Big_Data_Databricks/solucion_medallion/GUIA_REPLICACION.md`](06_Big_Data_Databricks/solucion_medallion/GUIA_REPLICACION.md).
 Requiere una cuenta de Databricks Free Edition; no necesita SQL Server porque los CSV ya están en `06_Big_Data_Databricks/datos`.
 
