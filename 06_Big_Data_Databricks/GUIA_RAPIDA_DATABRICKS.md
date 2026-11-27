@@ -4,7 +4,7 @@ Esta guía es para alguien que **nunca ha usado Databricks**. En unos 20 minutos
 
 | Notebook | Qué hace | Tiempo de ejecución |
 |---|---|---|
-| **EXP-02** · `notebook/EXP02_Databricks_Rendimiento.ipynb` | Experimento: mide cuánto tarda cargar y consultar los datos con 582, 5 000 y 10 000 filas. | 5–8 min |
+| **EXP-02** · `exp02-Escalabilidad/notebook/EXP02_Databricks_Rendimiento.ipynb` | Experimento: mide cuánto tarda cargar y consultar los datos con 582, 5 000 y 10 000 filas. | 5–8 min |
 | **Medallion** · `solucion_medallion/BigData_Solucion_Medallion.ipynb` | Solución completa: limpieza, capas Bronze/Silver/Gold, indicadores y dashboard. | 3–5 min |
 
 No necesitas instalar nada ni tener SQL Server: todo corre en el navegador y los datos ya están en GitHub.
@@ -22,7 +22,7 @@ Databricks está en inglés; abajo, cada botón lleva su traducción entre paré
 
 ## Paso 2 · Descargar los notebooks de GitHub (2 min)
 
-1. En el repositorio, abre `06_Big_Data_Databricks/notebook/EXP02_Databricks_Rendimiento.ipynb`.
+1. En el repositorio, abre `06_Big_Data_Databricks/exp02-Escalabilidad/notebook/EXP02_Databricks_Rendimiento.ipynb`.
 2. Pulsa el botón **Download raw file** (descargar archivo, icono de flecha hacia abajo, arriba a la derecha del archivo).
 3. Repite con `06_Big_Data_Databricks/solucion_medallion/BigData_Solucion_Medallion.ipynb`.
 
@@ -69,7 +69,7 @@ Los CSV **no** hace falta descargarlos: EXP-02 los copia solo desde GitHub.
 
 Para ver el dashboard después: barra izquierda → **Dashboards** → "BASAV · Monitoreo de empleados (Gold)".
 
-El significado de cada captura está en `capturas/README.md` y `solucion_medallion/capturas/README.md`.
+El significado de cada captura está en `exp02-Escalabilidad/capturas/README.md` y `solucion_medallion/capturas/README.md`.
 
 ## Si algo falla
 
@@ -94,4 +94,4 @@ DROP SCHEMA IF EXISTS workspace.bd_rendimiento CASCADE;
 ```
 
 ---
-Más detalle técnico: [`README.md`](README.md) (EXP-02) y [`solucion_medallion/GUIA_REPLICACION.md`](solucion_medallion/GUIA_REPLICACION.md) (Medallion).
+Más detalle técnico: [`exp02-Escalabilidad/README.md`](exp02-Escalabilidad/README.md) (EXP-02) y [`solucion_medallion/GUIA_REPLICACION.md`](solucion_medallion/GUIA_REPLICACION.md) (Medallion).
