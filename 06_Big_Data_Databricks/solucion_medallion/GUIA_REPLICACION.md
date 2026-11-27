@@ -1,7 +1,7 @@
 # Guía de replicación · Solución Big Data en Databricks (Medallion)
 
 Esta guía permite que cualquier integrante o el docente repita la solución Big Data desde cero, con una cuenta gratuita.
-Tiempo aproximado: 15 minutos. No hace falta SQL Server: los CSV ya están en [`../datos`](../datos).
+Tiempo aproximado: 15 minutos. No hace falta SQL Server: los CSV ya están en [`../exp02-Escalabilidad/archivos-csv`](../exp02-Escalabilidad/archivos-csv).
 
 ![Arquitectura](arquitectura_solucion_databricks.png)
 
@@ -12,7 +12,7 @@ Tiempo aproximado: 15 minutos. No hace falta SQL Server: los CSV ya están en [`
 | Cuenta | Databricks **Free Edition** (<https://www.databricks.com/learn/free-edition>), inicio de sesión con Google o correo. |
 | Compute | **Serverless**, el único disponible en Free Edition. No hay que crear clúster. |
 | Catálogo | `workspace` (viene creado). El notebook crea los esquemas `mon_bronze`, `mon_silver`, `mon_gold` y usa el volumen `bd_rendimiento.vol_rendimiento`. |
-| Archivos | [`BigData_Solucion_Medallion.ipynb`](BigData_Solucion_Medallion.ipynb) y los 6 CSV de [`../datos`](../datos). |
+| Archivos | [`BigData_Solucion_Medallion.ipynb`](BigData_Solucion_Medallion.ipynb) y los 6 CSV de [`../exp02-Escalabilidad/archivos-csv`](../exp02-Escalabilidad/archivos-csv). |
 
 ## 2. Subir los datos al volumen
 
@@ -53,7 +53,7 @@ Tiempo aproximado: 15 minutos. No hace falta SQL Server: los CSV ya están en [`
 | S-11 | Inventario de tablas Delta con filas, bytes y comentario; historial Delta. |
 | S-12 | Enlace al dashboard **"BASAV · Monitoreo de empleados (Gold)"**. Abrirlo desde **Dashboards**. |
 
-Si en S-09 aparece `HAY DIFERENCIAS`, revisar que los CSV sean los del repositorio (SHA-256 en `../datos/manifiesto_datos.csv`).
+Si en S-09 aparece `HAY DIFERENCIAS`, revisar que los CSV sean los del repositorio (SHA-256 en `../exp02-Escalabilidad/archivos-csv/manifiesto_datos.csv`).
 
 ## 6. Dashboard
 
